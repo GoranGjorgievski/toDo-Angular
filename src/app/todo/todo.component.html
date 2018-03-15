@@ -1,0 +1,35 @@
+<div class="jumbotron" style="padding: 45px 0px">
+  <h4 class="text-center">To Do List App</h4>
+</div>
+
+<input placeholder="Add new..." (keyup.enter)="addToDo(itemTitle)" type="text" class="form-control" #itemTitle>
+
+<div style="margin:5px 0px">
+  <ul class="list-group container">
+    <li class="list-group-item item col-12 row" *ngFor="let item of toDoListArray">
+      <span class="col-6">{{item.title}}</span>
+
+
+
+
+      <span class="hover-cursor hover-danger float-right col-1"
+        (click)="deleteToDo(item.key)"
+      >
+        <i class="fas fa-trash-alt"></i>
+      </span>
+
+      <span class="priority float-right col-2">
+        <i (click)="handleChangePriority(item.key, 1)" [ngClass]="isFiltering?'disabled fas fa-caret-up':'fas fa-caret-up'"></i>
+        <i (click)="handleChangePriority(item.key, 0)" [ngClass]="isFiltering?'disabled fas fa-caret-down':'fas fa-caret-down'"></i>
+      </span>
+
+      <span (click)="toggleToDo(item.key)" class="hover-cursor col-4 float-right" [class.text-success]="item.status">
+        <i [ngClass]="item.status?'far fa-calendar-check hover-black':'far fa-calendar hover-green'"></i>
+        {{item.status ?
+          'Done': ''}}
+      </span>
+    </li>
+  </ul>
+</div>
+
+<input placeholder="Search..." (keyup)="handleSearch(search.value)" type="text" class="form-control" #search>

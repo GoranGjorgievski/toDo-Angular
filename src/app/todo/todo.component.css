@@ -1,0 +1,42 @@
+.hover-green:hover{
+  color: green;
+  cursor: pointer;
+}
+.hover-black:hover{
+  color: black;
+  cursor: pointer;
+}
+
+.hover-danger:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.item{
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin: 3px;
+  font-size: 1.7em;
+}
+
+.priority{
+  margin-right: 10px;
+}
+
+.fa-caret-up {
+  cursor: pointer;
+}
+.fa-caret-up:hover{
+  color: green;
+}
+
+.fa-caret-down {
+  cursor: pointer;
+}
+.fa-caret-down:hover{
+  color: red;
+}
+.disabled{
+  cursor: no-drop;
+  color: gray !important;
+}
